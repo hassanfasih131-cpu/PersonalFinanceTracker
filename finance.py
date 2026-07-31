@@ -19,3 +19,20 @@ def addtransaction():
     print("The data has been added successfully")
     data.append(transaction)
     writetransaction(data)
+
+def viewsummary():
+    data=readtransaction()
+    if len(data)==0:
+        print("No transactions found.")
+        return
+    total_income=0
+    total_expense=0
+    for transaction in data:
+        if transaction["type"].lower()=="income":
+            total_income+=transaction["amount"]
+        elif transaction["type"].lower()=="expense":
+            total_expense+=transaction["amount"]
+    balance = total_income-total_expense
+    print("Total Income : ",total_income)
+    print("Total Expense: ",total_expense)
+    print("Balance: ",balance)
