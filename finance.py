@@ -2,8 +2,8 @@ from file_handler import readtransaction,writetransaction
 import json
 def addtransaction():
     data=readtransaction()
-    type=input("Enter the transaction type (income/expense): ")
-    category=input("Enter the category (travel,medicine,food,ect)")
+    type=input("Enter the transaction type (income/expense): ").lower()
+    category=input("Enter the category (travel,medicine,food,ect)").lower()
     date=input("Enter the date you want to add (DD/MM/YYYY) ")
     Bool=True
     while Bool:
@@ -36,3 +36,13 @@ def viewsummary():
     print("Total Income : ",total_income)
     print("Total Expense: ",total_expense)
     print("Balance: ",balance)
+def filtertransactions():
+    data=readtransaction()
+    if len(data)==0:
+        print("No transactions found.")
+        return
+    else:
+        category=input("Enter what category you want to filter transactions for: ").lower()
+        for i in data:
+            if i["category"]==category:
+                print("The transaction category is: ",i)
