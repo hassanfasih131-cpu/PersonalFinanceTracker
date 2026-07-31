@@ -36,6 +36,7 @@ def viewsummary():
     print("Total Income : ",total_income)
     print("Total Expense: ",total_expense)
     print("Balance: ",balance)
+
 def filtertransactions():
     data=readtransaction()
     if len(data)==0:
@@ -46,3 +47,19 @@ def filtertransactions():
         for i in data:
             if i["category"]==category:
                 print("The transaction category is: ",i)
+
+def spendinglimit():
+    total=0
+    data=readtransaction()
+    category=input("Enter what category you want to set a limit to: ").lower()
+    limit=float(input("Enter the limit: "))
+    for i in data:
+        if i["type"]=="expense":
+            if i["category"]==category:
+                total+=i["amount"]
+    if total>limit:
+        print("The limit has been reached")
+    else:
+        print("You are within the limit\n"
+              "The total is: ",total,
+              "\nThe limit is: ",limit)
