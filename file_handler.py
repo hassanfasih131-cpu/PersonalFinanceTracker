@@ -7,9 +7,9 @@ def readtransaction():
             data=json.load(f)
             return data
     except FileNotFoundError:
-        return {}
+        return []
     except json.decoder.JSONDecodeError:
-        return {}
+        return []
 
 def writetransaction(data):
     with open(file,"w") as f:
