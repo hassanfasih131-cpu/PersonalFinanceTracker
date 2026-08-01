@@ -54,8 +54,8 @@ def spendinglimit():
     category=input("Enter what category you want to set a limit to: ").lower()
     limit=float(input("Enter the limit: "))
     for i in data:
-        if i["type"]=="expense":
-            if i["category"]==category:
+        if i["type"].lower()=="expense":
+            if i["category"].lower()==category:
                 total+=i["amount"]
     if total>limit:
         print("The limit has been reached")
