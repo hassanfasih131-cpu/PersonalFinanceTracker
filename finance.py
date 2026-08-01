@@ -57,7 +57,6 @@ def spendinglimit():
         if i["type"].lower()=="expense":
             if i["category"].lower()==category:
                 total+=i["amount"]
-                print(total," ",limit)
     if total>=limit:
         print("The limit has been reached")
     else:
