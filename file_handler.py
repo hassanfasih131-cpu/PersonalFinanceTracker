@@ -1,5 +1,7 @@
 import json
-file="Transaction.json"
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+file = os.path.join(BASE_DIR, "Transaction.json")
 
 def readtransaction():
     try:
