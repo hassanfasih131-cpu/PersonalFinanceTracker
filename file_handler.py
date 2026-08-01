@@ -12,5 +12,6 @@ def readtransaction():
         return []
 
 def writetransaction(data):
-    with open(file,"w") as f:
-        json.dump(data,f)
+    print("Writing this data:", data)
+    with open(file, "w") as f:
+        json.dump(data, f,indent=4)

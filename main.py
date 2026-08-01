@@ -3,7 +3,7 @@ from finance import addtransaction, viewsummary, filtertransactions, spendinglim
 
 while True:
     print("Welcome to the Personal Finance Tracker app")
-    print("You can\n"
+    print("You can: \n"
           "1- Add a transaction\n"
           "2- View all transactions\n"
           "3- Filter transactions\n"
