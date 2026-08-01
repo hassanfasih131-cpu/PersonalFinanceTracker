@@ -43,7 +43,8 @@ def filtertransactions():
         print("No transactions found.")
         return
     else:
-        category=input("Enter what category you want to filter transactions for: ").lower()
+        category=input("Enter what category you want to filter transactions for"
+                       "(food,travel,medicine, ect): ").lower()
         for i in data:
             if i["category"]==category:
                 print("Type: ",i["type"],
