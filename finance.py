@@ -4,7 +4,6 @@ def addtransaction():
     data=readtransaction()
     type=input("Enter the transaction type (income/expense): ").lower()
     category=input("Enter the category (travel,medicine,food,ect)").lower()
-    date=input("Enter the date you want to add (DD/MM/YYYY) ")
     Bool=True
     while Bool:
         try:
@@ -12,6 +11,7 @@ def addtransaction():
             break
         except ValueError:
             print("Please enter a numeric value")
+    date=input("Enter the date you want to add (DD/MM/YYYY) ")
     transaction={"type":type
           ,"category":category
           ,"date":date
