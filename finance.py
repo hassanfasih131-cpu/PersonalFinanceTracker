@@ -46,10 +46,10 @@ def filtertransactions():
         category=input("Enter what category you want to filter transactions for: ").lower()
         for i in data:
             if i["category"]==category:
-                print("Type: ",i[type],
-                      "Category: ",i[category],
-                      "Amount: ",i["amount"],
-                      "Date: ",i["date"])
+                print("Type: ",i["type"],
+                      "\nCategory: ",i["category"],
+                      "\nAmount: ",i["amount"],
+                      "\nDate: ",i["date"])
 
 def spendinglimit():
     total=0
