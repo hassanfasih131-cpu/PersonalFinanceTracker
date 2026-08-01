@@ -1,5 +1,7 @@
 import json
-file="Transaction.json"
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+file = os.path.join(BASE_DIR, "Transaction.json")
 
 def readtransaction():
     try:
@@ -7,10 +9,11 @@ def readtransaction():
             data=json.load(f)
             return data
     except FileNotFoundError:
-        return {}
+        return []
     except json.decoder.JSONDecodeError:
-        return {}
+        return []
 
 def writetransaction(data):
-    with open(file,"w") as f:
-        json.dump(data,f)
+    print("Writing this data:", data)
+    with open(file, "w") as f:
+        json.dump(data, f,indent=4)
